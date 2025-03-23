@@ -1,0 +1,102 @@
+.section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.platform-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 32px;
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 480px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.platform-option {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--surface);
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    &.selected {
+        border-color: var(--primary);
+        background-color: rgba(99, 102, 241, 0.05);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(99, 102, 241, 0.1);
+    }
+}
+
+.platform-icon {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 8px;
+    opacity: 0.9;
+}
+
+.platform-name {
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+/* Platform specific colors */
+.tiktok-color.selected {
+    border-color: #25F4EE;
+    background-color: rgba(37, 244, 238, 0.05);
+}
+
+.instagram-color.selected {
+    border-color: #C13584;
+    background-color: rgba(193, 53, 132, 0.05);
+}
+
+.facebook-color.selected {
+    border-color: #3b5998;
+    background-color: rgba(59, 89, 152, 0.05);
+}
+
+.youtube-color.selected {
+    border-color: #FF0000;
+    background-color: rgba(255, 0, 0, 0.05);
+}
+
+.twitter-color.selected {
+    border-color: #1DA1F2;
+    background-color: rgba(29, 161, 242, 0.05);
+}
+
+.linkedin-color.selected {
+    border-color: #0077B5;
+    background-color: rgba(0, 119, 181, 0.05);
+}
+
+.pinterest-color.selected {
+    border-color: #E60023;
+    background-color: rgba(230, 0, 35, 0.05);
+}
+
+.reddit-color.selected {
+    border-color: #FF4500;
+    background-color: rgba(255, 69, 0, 0.05);
+}

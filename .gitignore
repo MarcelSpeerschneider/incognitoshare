@@ -5,6 +5,7 @@
 /tmp
 /out-tsc
 /bazel-out
+/url-resolver-backend
 
 # Node
 /node_modules
