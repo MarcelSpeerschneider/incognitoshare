@@ -4,12 +4,6 @@ import cors = require("cors");
 
 const corsHandler = cors({origin: true});
 
-// Die bestehende helloWorld-Function belassen
-export const helloWorld = functions.https.onRequest((request, response) => {
-  functions.logger.info("Hello logs!", {structuredData: true});
-  response.send("Hello from Firebase!");
-});
-
 // Neue Function für die URL-Auflösung
 export const resolveUrl = functions.https.onRequest((request, response) => {
   // CORS-Header aktivieren
