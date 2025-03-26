@@ -3,7 +3,7 @@ import { AppComponent } from './app.component';
 
 export const routes: Routes = [
     {
-        path: '/incognitoshare',
+        path: '/anonylink',
         component: AppComponent
     }
 

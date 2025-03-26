@@ -1,5 +1,20 @@
 <div class="result-container">
-    <div class="section-title">Anonymized Link</div>
-    <div class="result">{{ anonymizedLink }}</div>
+    <div class="result-title">Your cleaned link:</div>
+    <div class="result-url">{{ anonymizedLink }}</div>
     <button class="copy-btn" (click)="copyToClipboard()">{{ copyButtonText }}</button>
+    
+    <div class="result-stats">
+        <div class="stat-item">
+            <div class="stat-label">Detected Platform</div>
+            <div class="stat-value">{{ detectedPlatform }}</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-label">Removed Parameters</div>
+            <div class="stat-value">{{ getRemovedParametersCount() }}</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-label">Length Reduction</div>
+            <div class="stat-value">{{ originalLength - anonymizedLink.length }} chars</div>
+        </div>
+    </div>
 </div>

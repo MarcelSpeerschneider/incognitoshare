@@ -1,27 +1,19 @@
 .input-group {
-    margin-bottom: 24px;
+    display: flex;
+    flex: 1;
 }
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-    font-size: 0.875rem;
-}
-
-input[type="text"] {
+.link-input {
     width: 100%;
-    padding: 14px 16px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background-color: var(--surface);
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    transition: all 0.2s ease;
+    padding: 16px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    height: 50px;
+}
 
-    &:focus {
-        outline: none;
-        border-color: var(--primary);
-        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
-    }
+.link-input:focus {
+    outline: none;
+    border-color: var(--primary);
 }

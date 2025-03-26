@@ -1,21 +1,104 @@
-<h1>{{title}}</h1>
-
-<div class="intro-text">
-  <p>Share your favorite social media content without revealing your personal profile information. This tool removes
-    tracking parameters that platforms add to shared links.</p>
-</div>
-
-<div class="container">
-  <div>
-    <app-platform-selection [selectedPlatform]="selectedPlatform" (platformSelected)="onPlatformSelected($event)">
-    </app-platform-selection>
-
-    <app-link-input [selectedPlatform]="selectedPlatform" (linkChanged)="onLinkInput($event)">
-    </app-link-input>
-
-    <button (click)="anonymizeLink()">Anonymize Link</button>
+<header>
+  <div class="container">
+    <div class="header-content">
+      <a href="#" class="logo">{{ title }}</a>
+      <nav class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="#" class="btn">Sign Up</a>
+    </div>
   </div>
+</header>
 
-  <app-result *ngIf="showResult" [anonymizedLink]="anonymizedLink">
-  </app-result>
-</div>
+<section class="hero">
+  <div class="container">
+    <h1>Share Links. Protect Your Privacy.</h1>
+    <p>{{ title }} removes tracking parameters from your links, allowing you to share content without revealing personal data.</p>
+    
+    <div class="input-container">
+      <form class="link-form" (submit)="$event.preventDefault(); anonymizeLink()">
+        <app-link-input (linkChanged)="onLinkInput($event)" class="link-input">
+        </app-link-input>
+        <button type="submit" class="link-submit">Clean Link</button>
+      </form>
+      
+      <app-result *ngIf="showResult" [anonymizedLink]="anonymizedLink" [originalLink]="inputLink">
+      </app-result>
+    </div>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="container">
+    <div class="section-title">
+      <h2>Why {{ title }}?</h2>
+      <p>Discover how {{ title }} helps you protect your online privacy and share content safely.</p>
+    </div>
+    
+    <div class="feature-grid">
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h3>Removes Tracking Parameters</h3>
+        <p>Automatically removes all known tracking parameters from Facebook, Google, Twitter, and more.</p>
+      </div>
+      
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M21 9v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9"/>
+            <path d="M9 22V12h6v10"/>
+            <path d="M3 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4H3V5z"/>
+          </svg>
+        </div>
+        <h3>Auto-Detects Platforms</h3>
+        <p>Intelligently identifies the social platform from your link and applies the appropriate cleaning rules.</p>
+      </div>
+      
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/>
+            <path d="M12 6a1 1 0 0 0-1 1v5a1 1 0 0 0 .5.87l3.5 2a1 1 0 0 0 1.37-.37 1 1 0 0 0-.37-1.37L12.5 11.5V7a1 1 0 0 0-1-1z"/>
+          </svg>
+        </div>
+        <h3>Lightning Fast</h3>
+        <p>Instant processing so you can share your cleaned links immediately.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how-it-works" id="how-it-works">
+  <div class="container">
+    <div class="section-title">
+      <h2>How It Works</h2>
+      <p>{{ title }} makes it easy to protect your privacy when sharing links.</p>
+    </div>
+    
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Paste Your Link</h3>
+        <p>Simply paste any social media link into the field.</p>
+      </div>
+      
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Automatic Detection</h3>
+        <p>Our system identifies the platform and cleans the link accordingly.</p>
+      </div>
+      
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Share Safely</h3>
+        <p>Copy the cleaned link and share it safely with others.</p>
+      </div>
+    </div>
+  </div>
+</section>
